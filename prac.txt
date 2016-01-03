@@ -1,0 +1,66 @@
+Instead of creating your app as
+
+from flask import Flask
+
+app = Flask(__name__)
+wrap it in a function
+
+from flask import Flask
+
+def factory():
+    app = Flask(__name__)
+    return app
+    
+
+Instead of accessing attributes of the app object
+
+from app import app
+
+app.config['RELEVANT_CONFIG_VARIABLE']
+use the Flask current_app function
+
+from flask import current_app
+
+current_app.config['RELEVANT_CONFIG_VARIABLE']
+
+What's the big deal?
+
+Testing. Create different instances of your app
+Multiple Instances running in one process
+from app import app -> circular imports
+
+from flask import Flask
+from app.utils.processors import register_processors
+from app.models import db
+from app.views.index import index_bp
+from app.views.admin import admin
+
+
+def create_app(config=None, environment=None):
+    app = Flask(__name__)
+    app.config['ENVIRONMENT'] = environment
+    app.config.update(config or {})
+
+    db.init_app(app)
+    admin.init_app(app)
+
+    app.register_blueprint(index_bp)
+    register_processors(app)
+
+    return app
+Most Flask extensions provide a init_app method.
+
+For example:
+
+class FlaskExtension(object):
+    def __init__(self, app=None):
+        if app:
+            self.init_app(app)
+
+    def init_app(self, app):
+        if not hasattr(app, 'extensions'):
+            app.extensions = {}
+        app.extensions['EXTENSION'] = self
+注意使用current_app
+Celery
+任务队列

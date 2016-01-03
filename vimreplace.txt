@@ -1,0 +1,14 @@
+., *, \, [, ^, and $ are metacharacters.
++, ?, |, &, {, (, and ) must be escaped to use their special function.
+\/ is / (use backslash + forward slash to search for forward slash)
+\t is tab, \s is whitespace
+\n is newline, \r is CR (carriage return = Ctrl-M = ^M)
+After an opening [, everything until the next closing ] specifies a /collection. Character ranges can be represented with a -; for example a letter a, b, c, or the number 1 can be matched with [1a-c]. Negate the collection with [^ instead of [; for example [^1a-c] matches any character except a, b, c, or 1.
+\{#\} is used for repetition. /foo.\{2\} will match foo and the two following characters. The \ is not required on the closing } so /foo.\{2} will do the same thing.
+\(foo\) makes a backreference to foo. Parenthesis without escapes are literally matched. Here the \ is required for the closing \).
+When replacing:
+
+\r is newline, \n is a null byte (0x00).
+\& is ampersand (& is the text that matches the search pattern).
+\0 inserts the text matched by the entire pattern
+\1 inserts the text of the first backreference. \2 inserts the second backreference, and so on.

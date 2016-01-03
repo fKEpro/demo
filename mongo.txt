@@ -1,0 +1,6 @@
+insert 添加一个文档到集合里
+insert(post)
+
+读取
+更新
+删除
