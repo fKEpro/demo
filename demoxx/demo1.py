@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+
 hello_str = "Hello World"
 
 hello_int = 21
