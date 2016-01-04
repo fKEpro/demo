@@ -30,4 +30,4 @@ def create_report(name, url, domain_name, nmap, robots_txt, whois):
     write_file(project_dir + "/whois.txt",whois)
     print('Scan finished!')
 
-gather_info('baidu','https://www.baidu.com')
+gather_info('baidu','http://www.baidu.com')
