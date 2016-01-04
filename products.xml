@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<products>
+    <product name="product 1">
+        <code>1001</code>
+        <year>2015</year>
+        <model color="red" category="food">12E</model>
+    </product>
+    <product name="product 2">
+        <code>1002</code>
+        <year>2015</year>
+        <model color="green" category="beverage">15C</model>
+    </product>
+    <product name="product 3">
+        <code>1003</code>
+        <year>2015</year>
+        <model color="blue" category="electronics">19A</model>
+    </product>
+</products>
