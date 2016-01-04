@@ -4,7 +4,7 @@
 import base64
 
 
-plaintext = 'Hello world from Python'
+plaintext = 'Hello'
 s_bytes = plaintext.encode()
 enc1 = base64.b64encode(s_bytes)
 dec1 = base64.b64decode(enc1)
