@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*=============================================\\
+	Global Stuff
+//============================================*/
+
+h1, h2, h3, h4, h5, h6, p, ul li{
+	margin: 0;
+	padding: 0;
+	font-weight: 200;
+	list-style-type: none;
+}
+
+.cf:before, .cf:after {content: " "; display: table;} .cf:after { clear: both; } .cf { *zoom: 1; }
+
+html{
+	height:100%;
+	width:100%;
+	background-color:rgb(245,245,245);
+	background-position:center 0px;
+	background-size:100%;
+}
+
+body{
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-size:12pt;
+	margin:0px;
+	background-attachment: scroll;
+	background-repeat: repeat-y;
+	width:100%;
+	font-weight: 200;
+}
+
+h1{
+	width: 100%;
+	text-align: center;
+	margin: 5px;
+}
+
+.dialog{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	width: 360px;
+	background-color: #FFF;
+	padding: 20px;
+	text-align: center;
+	border: 1px solid #C8C8C8;
+	margin-top: -100px;
+}
+
+ul#tweets{
+	position: relative;
+	width: 1000px;
+	background-color: white;
+	margin: 0 auto 0 auto;
+	padding-top: 7px;
+	border: solid rgb(200,200,200);
+	border-width: 0 1px 1px 1px;
+	padding-left: 0;
+	padding-bottom: 0;
+}
+
+ul#tweets li{
+	height: 48px;
+	width: 100%;
+	margin-bottom: 8px;
+	border-bottom: 1px solid rgb(230,230,230);
+	margin-left: 0px;
+	padding-bottom: 7px;
+}
+
+ul#tweets li:last-child{
+	margin-bottom: 0px;
+}
+
+ul#tweets li .image{
+	float: left;
+	margin-left: 20px;
+}
+
+ul#tweets li .text{
+	float: left;
+	max-width: 90%;
+	margin-left: 15px;
+	margin-top: 5px;
+	font-size: 14px;
+}
