@@ -33,7 +33,7 @@ def authenticate():
 
 	try:
 		httpResponse = urllib2.urlopen(request)
-	except urllib2.HTTPError, e:
+	except urllib2.HTTPError as e:
 		return e.read()
 
 	responseData = getParameters(httpResponse.read())
@@ -66,7 +66,7 @@ def authorised():
 		
 		try:
 			httpResponse = urllib2.urlopen(verifyRequest)
-		except urllib2.HTTPError, e:
+		except urllib2.HTTPError as e:
 			return e.read()
 
 		responseData = getParameters(httpResponse.read())

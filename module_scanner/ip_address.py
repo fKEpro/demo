@@ -10,4 +10,3 @@ def get_ip_address(url):
 
     return results[marker:].splitlines()[0]
 
-get_ip_address("www.baidu.com")
